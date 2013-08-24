@@ -55,7 +55,7 @@ public class IngredientAdapter extends ArrayAdapter<Ingredient> {
 
 
         // if ingredients in list, populate data
-        if (ingredient.getName() != null) {
+        if (ingredient != null) {
 
             // set name
             holder.name.setText(ingredient.getName());
@@ -84,8 +84,9 @@ public class IngredientAdapter extends ArrayAdapter<Ingredient> {
 
 
         } else {
-            holder.name.setText("No ingredients found..but FBGM-> Fuck Bitches; Get Money!!!");
+            holder.name.setText("You have not added any ingredients!");
         }
+
 
         return row;
     }

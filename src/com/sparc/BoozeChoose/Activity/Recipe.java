@@ -125,6 +125,7 @@ public class Recipe extends BoozeChoose
                 @Override
                 public void onComplete(Bundle values) {
                     updateStatus(facebook.getAccessToken(),message);
+
                 }
 
                 @Override
@@ -165,6 +166,8 @@ public class Recipe extends BoozeChoose
         bundle.putString(Facebook.TOKEN,accessToken);
         AsyncFacebookRunner mAsyncFbRunner = new AsyncFacebookRunner(facebook);
         mAsyncFbRunner.request("me/feed",bundle,"POST", new PostRequestListener(), null);
+        Toast.makeText(Recipe.this,"Your drink was shared to Facebook",Toast.LENGTH_SHORT).show();
+
     }
 
         private final class PostRequestListener implements AsyncFacebookRunner.RequestListener {

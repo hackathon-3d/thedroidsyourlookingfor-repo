@@ -117,6 +117,7 @@
             <!--android:layout_height="wrap_content"-->
             <!--style="@style/button"/>-->
 
+
     <ListView
             android:id="@+id/ingredientsList"
             android:layout_below="@+id/main"
