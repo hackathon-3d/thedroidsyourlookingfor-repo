@@ -32,10 +32,6 @@
 
     </LinearLayout>
 
-    <ListView
-            android:id="@+id/mixersList"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>
 
     <LinearLayout android:orientation="horizontal"
                   android:background="@color/orange"
@@ -57,10 +53,6 @@
 
     </LinearLayout>
 
-    <ListView
-            android:id="@+id/liquorList"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>
 
     <LinearLayout android:orientation="horizontal"
                   android:background="@color/orange"
@@ -82,10 +74,6 @@
 
     </LinearLayout>
 
-    <ListView
-            android:id="@+id/liqueurList"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>
 
     <LinearLayout android:orientation="horizontal"
                   android:background="@color/orange"
@@ -108,7 +96,7 @@
     </LinearLayout>
 
     <ListView
-            android:id="@+id/miscList"
+            android:id="@+id/ingredientsList"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"/>
 

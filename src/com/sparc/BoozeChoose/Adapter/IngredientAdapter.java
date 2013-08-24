@@ -2,11 +2,14 @@ package com.sparc.BoozeChoose.Adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.view.*;
 import android.widget.*;
+import com.sparc.BoozeChoose.Activity.BoozeChoose;
+import com.sparc.BoozeChoose.Activity.ListIngredients;
 import com.sparc.BoozeChoose.Model.Ingredient;
 import com.sparc.BoozeChoose.R;
 
@@ -58,6 +61,12 @@ public class IngredientAdapter extends ArrayAdapter<Ingredient> {
             // set name
             holder.name.setText(ingredient.getName());
 
+            holder.name.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    BoozeChoose.myIngredients.add(ingredient);
+                    BoozeChoose.adapter.notifyDataSetChanged();
+                }
+            });
 
 
         } else {

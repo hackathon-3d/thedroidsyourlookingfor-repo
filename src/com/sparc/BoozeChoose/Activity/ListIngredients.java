@@ -39,7 +39,7 @@ public class ListIngredients extends BoozeChoose {
             type = extras.getString("type");
         }
 
-        // populate ingredients for type
+        // populate ingredients for each type
 
         List<Ingredient> ingredients = getIngredients(type);
         if (!(ingredients.size() < 1)) {
@@ -51,7 +51,6 @@ public class ListIngredients extends BoozeChoose {
             this.ingredients = (ListView) findViewById(R.id.ingredientListView);
 
             this.ingredients.setAdapter(adapter);
-
         }
     }
 
@@ -59,9 +58,6 @@ public class ListIngredients extends BoozeChoose {
     public List<Ingredient> getIngredients(String type) {
         ArrayList<Ingredient> result = new ArrayList<Ingredient>();
         SQLiteDatabase db = myDbHelper.getWritableDatabase();
-
-        String[] args = {type};
-        String query = type;
 
         Cursor myCursor = db.query(type, new String[] {"_id","name"}, null, null, null, null, null);
 
