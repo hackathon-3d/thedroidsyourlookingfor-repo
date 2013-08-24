@@ -3,18 +3,15 @@ package com.sparc.BoozeChoose.Activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import com.sparc.BoozeChoose.Adapter.DatabaseAdapter;
 import com.sparc.BoozeChoose.Adapter.IngredientAdapter;
-import com.sparc.BoozeChoose.Model.Drink;
 import com.sparc.BoozeChoose.Model.Ingredient;
 import com.sparc.BoozeChoose.R;
+import com.sparc.BoozeChoose.Twitter.TwitterClient;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -35,8 +32,8 @@ public class BoozeChoose extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
         ingredientsList = (ListView) findViewById(R.id.ingredientsList);
+
 
         // set up db
 
@@ -97,21 +94,6 @@ public class BoozeChoose extends Activity {
         });
 
 
-        // button listener for booze button
-
-        Button boozeButton = (Button)findViewById(R.id.boozeButton);
-        boozeButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                List<Drink> result = chooseMyBooze(myIngredients);
-                Intent i = new Intent(BoozeChoose.this,ListDrinks.class);
-                for (int x=0; x<result.size(); x++) {
-                    i.putExtra("drinks_"+x, new Drink(result.get(x).getId(),result.get(x).getName(),result.get(x).getIngredients()));
-                }
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(i);
-            }
-        });
-
         // populate user's ingredients
 
         if (!(myIngredients.size() < 1)) {
@@ -145,52 +127,6 @@ public class BoozeChoose extends Activity {
             }
 
         }
-    }
-
-    private List<Drink> chooseMyBooze(List<Ingredient> ingredients) {
-
-        ArrayList<Drink> result = new ArrayList<Drink>();
-        SQLiteDatabase db = myDbHelper.getWritableDatabase();
-
-        List<String> ingredientsStrings = new ArrayList<String>(0);
-        for (int x=0; x<ingredients.size(); x++) {
-            ingredientsStrings.add(x,ingredients.get(x).getName());
-        }
-
-        String listIngredients = "";
-       // for (int x=0; x< ingredientsStrings.size(); x++) {
-            /*if (x == ingredientsStrings.size()-1) {
-                listIngredients = " ingredients LIKE '%" + ingredientsStrings.get(x) + "%'" + listIngredients;
-            } else {
-                listIngredients = " ingredients LIKE '%" + ingredientsStrings.get(x) + "%' AND " + listIngredients;
-            }*/
-
-        //}
-        for (String ingredient:ingredientsStrings) {
-            if (ingredientsStrings.indexOf(ingredient)==ingredientsStrings.size()-1) {
-                listIngredients = " ingredients LIKE '%" + ingredient + "%' AND" + listIngredients;
-            } else {
-                listIngredients = " ingredients LIKE '%" + ingredient + "%'";
-            }
-        }
-
-        Cursor myCursor = db.query("drinks", new String[] {"_id","name","ingredients"}, listIngredients, null, null, null, null);
-
-        try{
-            if (myCursor.moveToFirst()){
-                do{
-                    Drink drink = new Drink();
-                    drink.setName(myCursor.getString((myCursor.getColumnIndex("name"))));
-                    drink.setId(myCursor.getString((myCursor.getColumnIndex("_id"))));
-                    drink.setIngredients(myCursor.getString((myCursor.getColumnIndex("ingredients"))));
-                    result.add(drink);
-                }while(myCursor.moveToNext());
-            }
-        }finally{
-            myCursor.close();
-        }
-        db.close();
-        return result;
     }
 
 }
