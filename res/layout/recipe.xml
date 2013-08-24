@@ -59,7 +59,7 @@
         <Button
                 android:layout_width="120dip"
                 android:layout_height="wrap_content"
-                android:id="@+id/myFavButton"
+                android:id="@+id/myShareButton"
                 style="@style/recipe_button"
                 android:layout_weight=".5"
                 android:text="@string/share_button"/>
