@@ -1,5 +1,7 @@
 package com.sparc.BoozeChoose.Model;
 
+import java.io.Serializable;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Whitney Champion
@@ -7,7 +9,8 @@ package com.sparc.BoozeChoose.Model;
  * Time: 9:37 PM
  * Description:
  */
-public class Drink {
+public class Drink implements Serializable
+{
 
     private String id;
     private String name;
