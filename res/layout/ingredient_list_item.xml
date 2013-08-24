@@ -12,12 +12,12 @@
             style="@style/ingredient"
             />
 
-    <Button android:id="@+id/removeButton"
-            android:layout_alignParentRight="true"
-            android:text="@string/minus"
-            style="@style/ingredient_button"
-            android:layout_width="40dip"
-            android:gravity="center_horizontal"
-            android:layout_height="wrap_content"/>
+    <!--<Button android:id="@+id/removeButton"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:text="@string/minus"-->
+            <!--style="@style/ingredient_button"-->
+            <!--android:layout_width="40dip"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:layout_height="wrap_content"/>-->
 
 </RelativeLayout>
