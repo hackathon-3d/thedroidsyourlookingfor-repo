@@ -65,6 +65,9 @@ public class ListDrinks extends BoozeChoose {
             public void onClick(View v) {
                 Intent i = new Intent(ListDrinks.this,BoozeChoose.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                for (int x=0;x<BoozeChoose.myIngredients.size();x++) {
+                    BoozeChoose.myIngredients.remove(x);
+                }
                 startActivity(i);
             }
         });

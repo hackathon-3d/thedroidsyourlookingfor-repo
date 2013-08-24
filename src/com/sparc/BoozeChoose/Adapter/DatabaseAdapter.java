@@ -41,7 +41,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
      */
     public DatabaseAdapter(Context context)  {
 
-        super(context, DB_NAME, null, 4);
+        super(context, DB_NAME, null, 5);
         this.myContext = context;
     }
 

@@ -292,6 +292,7 @@ public class BoozeChoose extends Activity {
             case R.id.main:
                 startActivity(new Intent(BoozeChoose.this,
                         BoozeChoose.class));
+                break;
             case R.id.my_drinks:
                 startActivity(new Intent(BoozeChoose.this,
                         SavedDrinks.class));
