@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/recipeBackground"
               android:orientation="vertical"
               android:gravity="center_horizontal"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="@color/black">
 
-    <TextView android:id="recipe"
+    <TextView android:id="@+id/recipeText"
+              style="@style/recipe_text"
               android:layout_height="wrap_content"
               android:layout_width="wrap_content"/>
 
@@ -21,6 +23,13 @@
                 android:id="@+id/myFavButton"
                 style="@style/recipe_button"
                 android:text="@string/recipe_button"/>
+
+        <Button
+                android:layout_width="120dip"
+                android:layout_height="wrap_content"
+                android:id="@+id/myFavButton"
+                style="@style/recipe_button"
+                android:text="@string/share_button"/>
 
     </LinearLayout>
 
