@@ -31,5 +31,6 @@
                   android:theme="@android:style/Theme.Dialog"/>
         <activity android:name=".Activity.Recipe"
                   android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".View.SwipableListView"/>
     </application>
 </manifest>
