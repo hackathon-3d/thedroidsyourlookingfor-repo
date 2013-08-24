@@ -10,6 +10,13 @@
         <item name="android:layout_marginRight">2dip</item>
         <item name="android:background">@drawable/button_states</item>
     </style>
+    <style name="ingredient">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textSize">18dip</item>
+        <item name="android:padding">6dp</item>
+    </style>
     <style name="booze_button">
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">center_horizontal</item>

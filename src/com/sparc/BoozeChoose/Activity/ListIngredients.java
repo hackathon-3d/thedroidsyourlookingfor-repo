@@ -3,6 +3,7 @@ package com.sparc.BoozeChoose.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Window;
 import android.widget.ListView;
 import com.sparc.BoozeChoose.Adapter.IngredientAdapter;
 import com.sparc.BoozeChoose.Model.Ingredient;
@@ -29,6 +30,7 @@ public class ListIngredients extends BoozeChoose {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.ingredient_list);
 
         // get intent extras
