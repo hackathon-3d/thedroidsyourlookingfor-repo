@@ -112,5 +112,7 @@
             style="@style/booze_button"
             android:text="@string/booze_button"/>
 
+        </LinearLayout>
+
 </LinearLayout>
 
