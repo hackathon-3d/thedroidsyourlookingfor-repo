@@ -158,11 +158,19 @@ public class BoozeChoose extends Activity {
         }
 
         String listIngredients = "";
-        for (int x=0; x< ingredientsStrings.size(); x++) {
-            if (x == ingredientsStrings.size()-1) {
-                listIngredients = " ingredients LIKE '%" + ingredientsStrings.get(x);
+       // for (int x=0; x< ingredientsStrings.size(); x++) {
+            /*if (x == ingredientsStrings.size()-1) {
+                listIngredients = " ingredients LIKE '%" + ingredientsStrings.get(x) + "%'" + listIngredients;
             } else {
-                listIngredients = " ingredients LIKE '%" + ingredientsStrings.get(x) + "% AND " + listIngredients;
+                listIngredients = " ingredients LIKE '%" + ingredientsStrings.get(x) + "%' AND " + listIngredients;
+            }*/
+
+        //}
+        for (String ingredient:ingredientsStrings) {
+            if (ingredientsStrings.indexOf(ingredient)==ingredientsStrings.size()-1) {
+                listIngredients = " ingredients LIKE '%" + ingredient + "%' AND" + listIngredients;
+            } else {
+                listIngredients = " ingredients LIKE '%" + ingredient + "%'";
             }
         }
 
