@@ -19,6 +19,7 @@ public class BoozeChoose extends Activity {
 
     public static ListView ingredientsList;
     private IngredientAdapter adapter;
+    private Ingredient[] ingredientData;
     public static List<Ingredient> myIngredients = new ArrayList<Ingredient>(0);
 
     public DatabaseAdapter myDbHelper;
@@ -93,7 +94,6 @@ public class BoozeChoose extends Activity {
 
         // populate user's ingredients
 
-        Ingredient[] ingredientData;
         if (!(myIngredients.size() < 1)) {
 
             ingredientData = myIngredients.toArray(new Ingredient[myIngredients.size()]);
@@ -107,10 +107,12 @@ public class BoozeChoose extends Activity {
         }
     }
 
+
+
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (adapter != null) {
+            ingredientData =  myIngredients.toArray(new Ingredient[myIngredients.size()]);
             adapter.notifyDataSetChanged();
         }
     }
