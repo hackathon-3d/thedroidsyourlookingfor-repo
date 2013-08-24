@@ -31,8 +31,8 @@ public class ListDrinks extends BoozeChoose {
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-        super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.ingredient_list);
 
         Bundle extras = getIntent().getExtras();
