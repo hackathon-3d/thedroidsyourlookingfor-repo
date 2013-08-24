@@ -51,6 +51,7 @@ public class ListIngredients extends BoozeChoose {
             this.ingredients = (ListView) findViewById(R.id.ingredientListView);
 
             this.ingredients.setAdapter(adapter);
+
         }
     }
 
