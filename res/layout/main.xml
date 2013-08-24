@@ -4,10 +4,110 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
         >
-    <TextView
+
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/mixersText"
+                android:text="@string/mixers"
+                android:layout_weight=".5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:style="@style/button"/>
+        <Button android:id="@+id/mixersButton"
+                android:text="@string/plus"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <ListView
+            android:id="@+id/mixersList"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Hello World, BoozeChoose"
-            />
+            android:layout_height="wrap_content"/>
+
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/liquorText"
+                android:text="@string/liquor"
+                android:layout_weight=".5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:style="@style/button"/>
+        <Button android:id="@+id/liquorButton"
+                android:text="@string/plus"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <ListView
+            android:id="@+id/liquorList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/liqueurText"
+                android:text="@string/liqueur"
+                android:layout_weight=".5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:style="@style/button"/>
+        <Button android:id="@+id/liqueurButton"
+                android:text="@string/plus"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <ListView
+            android:id="@+id/liqueurList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/miscText"
+                android:text="@string/misc"
+                android:layout_weight=".5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:style="@style/button"/>
+        <Button android:id="@+id/miscButton"
+                android:text="@string/plus"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <ListView
+            android:id="@+id/miscList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/boozeButton"
+        android:text="@string/booze_button"/>
+
+
 </LinearLayout>
 

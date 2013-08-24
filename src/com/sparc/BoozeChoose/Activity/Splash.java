@@ -6,19 +6,20 @@ import android.os.Bundle;
 import com.sparc.BoozeChoose.R;
 
 /**
- * User: stephen quick
+ * Created with IntelliJ IDEA.
+ * User: Whitney Champion
  * Date: 8/23/13
- * Time: 10:10 PM
+ * Time: 10:12 PM
+ * Description:
  */
-public class Splash extends Activity
-{
+public class Splash extends Activity {
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
         /** set time to splash out */
         final int welcomeScreenDisplay = 3000;
-
         /** create a thread to show splash up to splash time */
         Thread welcomeThread = new Thread() {
 
