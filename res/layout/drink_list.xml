@@ -8,9 +8,18 @@
     <ListView
             android:id="@+id/drinkListView"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight=".9"
+
             android:divider="@null"
             android:background="@color/white"
             android:dividerHeight="1dip"/>
+    <Button
+        android:id="@+id/closeButton"
+        android:layout_weight=".1"
+        style="@style/button"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:text="Close"/>
 
 </LinearLayout>

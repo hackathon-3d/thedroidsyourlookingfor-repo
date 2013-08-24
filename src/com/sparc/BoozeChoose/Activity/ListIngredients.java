@@ -1,9 +1,12 @@
 package com.sparc.BoozeChoose.Activity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ListView;
 import com.sparc.BoozeChoose.Adapter.IngredientAdapter;
 import com.sparc.BoozeChoose.Model.Ingredient;
@@ -53,7 +56,17 @@ public class ListIngredients extends BoozeChoose {
             this.ingredients = (ListView) findViewById(R.id.ingredientListView);
 
             this.ingredients.setAdapter(adapter);
+
         }
+
+        Button closeButton = (Button)findViewById(R.id.closeButton);
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(ListIngredients.this,BoozeChoose.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+            }
+        });
     }
 
     // get list of ingredients from database
