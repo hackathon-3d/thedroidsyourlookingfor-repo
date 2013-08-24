@@ -24,7 +24,9 @@
             android:gravity="center">
 
         <LinearLayout android:orientation="horizontal"
-                      android:layout_marginTop="5dip"
+                      android:layout_marginTop="6dip"
+                      android:layout_marginLeft="6dip"
+                      android:layout_marginRight="6dip"
                       android:layout_width="fill_parent"
                       android:layout_height="wrap_content"
                       android:layout_marginBottom="5dip">
@@ -36,17 +38,21 @@
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     style="@style/button"/>
+
             <Button android:id="@+id/mixersButton"
                     android:text="@string/plus"
                     style="@style/button"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dip"
+                    android:gravity="center_horizontal"
                     android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
 
         <LinearLayout android:orientation="horizontal"
-                      android:layout_marginBottom="5dip"
+                      android:layout_marginTop="6dip"
+                      android:layout_marginLeft="6dip"
+                      android:layout_marginRight="6dip"
                       android:layout_width="fill_parent"
                       android:layout_height="wrap_content">
 
@@ -57,17 +63,21 @@
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     style="@style/button"/>
+
             <Button android:id="@+id/liquorButton"
                     android:text="@string/plus"
                     style="@style/button"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dip"
+                    android:gravity="center_horizontal"
                     android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
 
         <LinearLayout android:orientation="horizontal"
-                      android:layout_marginBottom="5dip"
+                      android:layout_marginTop="6dip"
+                      android:layout_marginLeft="6dip"
+                      android:layout_marginRight="6dip"
                       android:layout_width="fill_parent"
                       android:layout_height="wrap_content">
 
@@ -78,17 +88,21 @@
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     style="@style/button"/>
+
             <Button android:id="@+id/liqueurButton"
                     android:text="@string/plus"
                     style="@style/button"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dip"
+                    android:gravity="center_horizontal"
                     android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
 
         <LinearLayout android:orientation="horizontal"
-                      android:layout_marginBottom="5dip"
+                      android:layout_marginTop="6dip"
+                      android:layout_marginLeft="6dip"
+                      android:layout_marginRight="6dip"
                       android:layout_width="fill_parent"
                       android:layout_height="wrap_content">
 
@@ -99,10 +113,12 @@
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     style="@style/button"/>
+
             <Button android:id="@+id/miscButton"
                     android:text="@string/plus"
                     style="@style/button"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dip"
+                    android:gravity="center_horizontal"
                     android:layout_height="wrap_content"/>
 
         </LinearLayout>
@@ -110,14 +126,23 @@
 
     </LinearLayout>
 
+    <!--<TextView-->
+            <!--android:id="@+id/ingredientHeader"-->
+            <!--android:layout_below="@+id/main"-->
+            <!--android:text="@string/ingredient_header"-->
+            <!--android:layout_weight=".5"-->
+            <!--android:layout_width="0dip"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--style="@style/button"/>-->
 
     <ListView
             android:id="@+id/ingredientsList"
             android:layout_below="@+id/main"
-            android:layout_width="250dip"
+            android:layout_width="fill_parent"
+            android:layout_margin="6dip"
             android:layout_height="wrap_content"
             android:divider="@null"
-            android:dividerHeight="0dip"/>
+            android:dividerHeight="1dip"/>
 
 
     <Button

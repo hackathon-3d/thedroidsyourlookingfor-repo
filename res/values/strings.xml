@@ -5,6 +5,7 @@
     <string name="liquor">Liquor</string>
     <string name="liqueur">Liqueur</string>
     <string name="misc">Miscellaneous</string>
+    <string name="ingredient_header">Ingredients</string>
     <string name="plus">+</string>
     <string name="booze_button">Choose My Booze</string>
     <string name="recipe_button">Save Recipe</string>

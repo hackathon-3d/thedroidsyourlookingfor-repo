@@ -16,7 +16,10 @@
         <item name="android:gravity">left</item>
         <item name="android:textSize">18dip</item>
         <item name="android:padding">6dp</item>
-        <item name="android:background">@color/green</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:background">@color/red</item>
     </style>
     <style name="booze_button">
         <item name="android:textStyle">bold</item>
