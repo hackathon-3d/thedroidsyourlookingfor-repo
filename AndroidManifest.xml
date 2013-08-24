@@ -29,5 +29,7 @@
                   android:theme="@android:style/Theme.Dialog"/>
         <activity android:name=".Activity.ListDrinks"
                   android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".Activity.Recipe"
+                  android:theme="@android:style/Theme.Dialog"/>
     </application>
 </manifest>
