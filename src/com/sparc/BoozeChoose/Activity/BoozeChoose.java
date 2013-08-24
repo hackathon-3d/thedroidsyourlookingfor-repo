@@ -1,7 +1,8 @@
-package com.sparc.BoozeChoose;
+package com.sparc.BoozeChoose.Activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import com.sparc.BoozeChoose.R;
 
 public class BoozeChoose extends Activity {
     /**
