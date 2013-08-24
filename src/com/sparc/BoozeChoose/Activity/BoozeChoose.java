@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.sparc.BoozeChoose.Adapter.DatabaseAdapter;
+import com.sparc.BoozeChoose.Adapter.DrinkAdapter;
 import com.sparc.BoozeChoose.Adapter.IngredientAdapter;
 import com.sparc.BoozeChoose.Model.Drink;
 import com.sparc.BoozeChoose.Model.Ingredient;
@@ -149,6 +150,31 @@ public class BoozeChoose extends Activity {
                 List<Drink> result = chooseMyBooze(myIngredients);
                 if (result.size()<1) {
                     Toast.makeText(BoozeChoose.this,"No drinks were found containing those ingredients", Toast.LENGTH_SHORT).show();
+                    for (int x=0;x<myIngredients.size();x++) {
+                        myIngredients.remove(x);
+                    }
+                    ingredientData = myIngredients.toArray(new Ingredient[0]);
+
+                    adapter = new IngredientAdapter(BoozeChoose.this, BoozeChoose.this, R.layout.ingredient_list_item, ingredientData);
+
+                    ingredientsList = (ListView) findViewById(R.id.ingredientsList);
+
+                    ingredientsList.setAdapter(adapter);
+
+                    adapter.notifyDataSetChanged();
+                    for (int x=0;x<myIngredients.size();x++) {
+                        myIngredients.remove(x);
+                    }
+                    ingredientData = myIngredients.toArray(new Ingredient[1]);
+
+                    adapter = new IngredientAdapter(BoozeChoose.this, BoozeChoose.this, R.layout.ingredient_list_item, ingredientData);
+
+                    ingredientsList = (ListView) findViewById(R.id.ingredientsList);
+
+                    ingredientsList.setAdapter(adapter);
+
+                    adapter.notifyDataSetChanged();
+
                 } else {
                     Intent i = new Intent(BoozeChoose.this,ListDrinks.class);
                     for (int x=0; x<result.size(); x++) {
@@ -168,6 +194,15 @@ public class BoozeChoose extends Activity {
         if (!(myIngredients.size() < 1)) {
 
             ingredientData = myIngredients.toArray(new Ingredient[myIngredients.size()]);
+
+            adapter = new IngredientAdapter(this, BoozeChoose.this, R.layout.ingredient_list_item, ingredientData);
+
+            ingredientsList = (ListView) findViewById(R.id.ingredientsList);
+
+            ingredientsList.setAdapter(adapter);
+
+        } else {
+            ingredientData = myIngredients.toArray(new Ingredient[1]);
 
             adapter = new IngredientAdapter(this, BoozeChoose.this, R.layout.ingredient_list_item, ingredientData);
 
@@ -213,9 +248,9 @@ public class BoozeChoose extends Activity {
             if (ingredientsString.size()==1) {
                 listIngredients = " ingredients LIKE '%" + ingredient + "%'";
             } else if (ingredientsString.indexOf(ingredient) == ingredientsString.size()-1) {
-                listIngredients = " ingredients LIKE '%" + ingredient + "%' AND " + listIngredients;
+                listIngredients = listIngredients + " ingredients LIKE '%" + ingredient + "%'";
             } else {
-                listIngredients = " ingredients LIKE '%" + ingredient + "%'" + listIngredients;
+                listIngredients = " ingredients LIKE '%" + ingredient + "%' AND " + listIngredients;
             }
 
         }
