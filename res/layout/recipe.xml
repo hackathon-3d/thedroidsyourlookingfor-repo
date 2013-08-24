@@ -59,10 +59,18 @@
         <Button
                 android:layout_width="120dip"
                 android:layout_height="wrap_content"
-                android:id="@+id/myShareButton"
+                android:id="@+id/myShareFbButton"
                 style="@style/recipe_button"
                 android:layout_weight=".5"
-                android:text="@string/share_button"/>
+                android:text="@string/share_facebook_button"/>
+        <Button
+                android:layout_width="120dip"
+                android:layout_height="wrap_content"
+                android:id="@+id/myShareTwitterButton"
+                style="@style/recipe_button"
+                android:layout_weight=".5"
+                android:text="@string/share_twitter_button"/>
+
 
     </LinearLayout>
 
