@@ -5,4 +5,6 @@
     <string name="liquor">Liquor</string>
     <string name="liqueur">Liqueur</string>
     <string name="misc">Miscellaneous</string>
+    <string name="plus">+</string>
+    <string name="booze_button">Booze It Up</string>
 </resources>
