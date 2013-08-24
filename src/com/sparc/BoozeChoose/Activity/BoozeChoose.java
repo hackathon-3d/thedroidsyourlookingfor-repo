@@ -51,7 +51,7 @@ public class BoozeChoose extends Activity {
                 Intent i = new Intent(BoozeChoose.this,ListIngredients.class);
                 i.putExtra("type","mixers");
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivityForResult(i,1);
+                startActivity(i);
             }
         });
 
@@ -63,7 +63,7 @@ public class BoozeChoose extends Activity {
                 Intent i = new Intent(BoozeChoose.this,ListIngredients.class);
                 i.putExtra("type","liquor");
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivityForResult(i,0);
+                startActivity(i);
             }
         });
 
@@ -75,7 +75,7 @@ public class BoozeChoose extends Activity {
                 Intent i = new Intent(BoozeChoose.this,ListIngredients.class);
                 i.putExtra("type","liqueur");
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivityForResult(i,0);
+                startActivity(i);
             }
         });
 
@@ -87,7 +87,7 @@ public class BoozeChoose extends Activity {
                 Intent i = new Intent(BoozeChoose.this,ListIngredients.class);
                 i.putExtra("type","misc");
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivityForResult(i,0);
+                startActivity(i);
             }
         });
 
@@ -107,13 +107,24 @@ public class BoozeChoose extends Activity {
         }
     }
 
-
-
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (adapter != null) {
-            ingredientData =  myIngredients.toArray(new Ingredient[myIngredients.size()]);
-            adapter.notifyDataSetChanged();
+    public void onResume(){
+        super.onResume();
+        if (!(myIngredients.size() < 1)) {
+
+            ingredientData = myIngredients.toArray(new Ingredient[myIngredients.size()]);
+
+            adapter = new IngredientAdapter(this, BoozeChoose.this, R.layout.ingredient_list_item, ingredientData);
+
+            ingredientsList = (ListView) findViewById(R.id.ingredientsList);
+
+            if (ingredientsList!=null){
+                ingredientsList.setAdapter(adapter);
+
+                adapter.notifyDataSetChanged();
+            }
+
         }
     }
+
 }
