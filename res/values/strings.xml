@@ -7,4 +7,6 @@
     <string name="misc">Miscellaneous</string>
     <string name="plus">+</string>
     <string name="booze_button">Choose My Booze</string>
+    <string name="recipe_button">Save Recipe</string>
+    <string name="share_button">Share Recipe</string>
 </resources>
