@@ -9,7 +9,7 @@
     <string name="plus">+</string>
     <string name="minus">-</string>
     <string name="booze_button">Choose My Booze</string>
-    <string name="recipe_button">Save Recipe</string>
+    <string name="recipe_button">Save\nRecipe</string>
     <string name="share_facebook_button">Share to Facebook</string>
     <string name="share_twitter_button">Share to Twitter</string>
 </resources>

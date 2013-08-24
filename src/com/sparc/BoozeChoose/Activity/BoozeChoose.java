@@ -254,6 +254,9 @@ public class BoozeChoose extends Activity {
 
         switch (item.getItemId()) {
 
+            case R.id.main:
+                startActivity(new Intent(BoozeChoose.this,
+                        BoozeChoose.class));
             case R.id.my_drinks:
                 startActivity(new Intent(BoozeChoose.this,
                         SavedDrinks.class));

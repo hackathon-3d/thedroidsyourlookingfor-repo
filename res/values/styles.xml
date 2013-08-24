@@ -60,7 +60,7 @@
         <item name="android:layout_margin">12dip</item>
         <item name="android:textColor">@color/red</item>
         <item name="android:textSize">22dip</item>
-        <item name="android:background">@color/white</item>
+        <item name="android:background">@drawable/big_button_states</item>
     </style>
     <style name="recipe_button">
         <item name="android:textStyle">bold</item>

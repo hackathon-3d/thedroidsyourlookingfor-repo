@@ -59,7 +59,7 @@ public class Recipe extends BoozeChoose
 
         Button saveButton = (Button) findViewById(R.id.myFavButton);
         Button shareFbButton = (Button) findViewById(R.id.myShareFbButton);
-        Button shareTwitterButton = (Button) findViewById(R.id.myShareFbButton);
+        Button shareTwitterButton = (Button) findViewById(R.id.myShareTwitterButton);
 
         final Drink finalDrink = drink;
         saveButton.setOnClickListener(new View.OnClickListener() {
