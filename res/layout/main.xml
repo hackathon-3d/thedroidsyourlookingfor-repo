@@ -15,7 +15,8 @@
                 android:layout_weight=".5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:style="@style/button"/>
+                style="@style/button"/>
+
         <Button android:id="@+id/mixersButton"
                 android:text="@string/plus"
                 android:textColor="@color/white"
@@ -39,7 +40,7 @@
                 android:layout_weight=".5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:style="@style/button"/>
+                style="@style/button"/>
         <Button android:id="@+id/liquorButton"
                 android:text="@string/plus"
                 android:textColor="@color/white"
@@ -63,7 +64,7 @@
                 android:layout_weight=".5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:style="@style/button"/>
+                style="@style/button"/>
         <Button android:id="@+id/liqueurButton"
                 android:text="@string/plus"
                 android:textColor="@color/white"
@@ -87,7 +88,7 @@
                 android:layout_weight=".5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:style="@style/button"/>
+                style="@style/button"/>
         <Button android:id="@+id/miscButton"
                 android:text="@string/plus"
                 android:textColor="@color/white"
@@ -103,11 +104,10 @@
 
 
     <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/boozeButton"
-        android:text="@string/booze_button"/>
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/boozeButton"
+            android:text="@string/booze_button"/>
 
 
 </LinearLayout>
-
