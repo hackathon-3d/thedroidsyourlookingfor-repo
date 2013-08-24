@@ -75,7 +75,7 @@ public class IngredientAdapter extends ArrayAdapter<Ingredient> {
 
 
         } else {
-            holder.name.setText("No ingredients found..but FBGM-> Fuck Bitches; Get Money!!!!");
+            holder.name.setText("No ingredients found..but FBGM-> Fuck Bitches; Get Money!!!");
         }
 
         return row;
