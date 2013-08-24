@@ -20,3 +20,9 @@
 .idea/workspace.xml
 
 thedroidsyourlookingfor-repo.iml
+
+*.class
+
+*.apk
+
+AndroidManifest.xml
