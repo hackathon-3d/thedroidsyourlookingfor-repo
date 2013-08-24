@@ -60,7 +60,7 @@ public class DrinkAdapter extends ArrayAdapter<Drink> {
 
 
         // if ingredients in list, populate data
-        if (drink.getName() != null) {
+        if (drink != null) {
 
             // set name
             holder.name.setText(drink.getName());
@@ -78,7 +78,7 @@ public class DrinkAdapter extends ArrayAdapter<Drink> {
 
 
         } else {
-            holder.name.setText("No drinks found..but FBGM-> Fuck Bitches; Get Money!!!!");
+            holder.name.setText("You have not saved any drinks!");
         }
 
         return row;

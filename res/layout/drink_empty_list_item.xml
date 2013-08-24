@@ -9,7 +9,7 @@
             android:layout_alignParentLeft="true"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            style="@style/drink"
+            style="@style/no_drink"
             android:text="No drinks saved"
             android:id="@+id/drinkName"/>
 
