@@ -28,5 +28,10 @@ public class Ingredient {
         this.name = name;
     }
 
+    public boolean equals(Object a){
+        Ingredient ingredient = (Ingredient)a;
+        return this.getName().equals(ingredient.getName());
+
+    }
 
 }
