@@ -2,12 +2,15 @@ package com.sparc.BoozeChoose.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.sparc.BoozeChoose.Activity.BoozeChoose;
+import com.sparc.BoozeChoose.Activity.ListIngredients;
+import com.sparc.BoozeChoose.Activity.Recipe;
 import com.sparc.BoozeChoose.Model.Drink;
 import com.sparc.BoozeChoose.Model.Ingredient;
 import com.sparc.BoozeChoose.R;
@@ -64,6 +67,11 @@ public class DrinkAdapter extends ArrayAdapter<Drink> {
 
             holder.name.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
+
+                    Intent i = new Intent(getContext(),Recipe.class);
+                    i.putExtra("drink",new Drink(drink.getId(),drink.getName(),drink.getIngredients()));
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    getContext().startActivity(i);
 
                 }
             });

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 import com.sparc.BoozeChoose.Adapter.DatabaseAdapter;
 import com.sparc.BoozeChoose.Adapter.IngredientAdapter;
 import com.sparc.BoozeChoose.Model.Drink;
@@ -143,12 +144,16 @@ public class BoozeChoose extends Activity {
         boozeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 List<Drink> result = chooseMyBooze(myIngredients);
-                Intent i = new Intent(BoozeChoose.this,ListDrinks.class);
-                for (int x=0; x<result.size(); x++) {
-                    i.putExtra("drinks_"+x,new Drink(result.get(x).getId(),result.get(x).getName(),result.get(x).getIngredients()));
+                if (result.size()<1) {
+                    Toast.makeText(BoozeChoose.this,"No drinks were found containing those ingredients", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent i = new Intent(BoozeChoose.this,ListDrinks.class);
+                    for (int x=0; x<result.size(); x++) {
+                        i.putExtra("drinks_"+x,new Drink(result.get(x).getId(),result.get(x).getName(),result.get(x).getIngredients()));
+                    }
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(i);
                 }
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(i);
             }
         });
 
