@@ -14,6 +14,8 @@ import com.sparc.BoozeChoose.Activity.ListIngredients;
 import com.sparc.BoozeChoose.Model.Ingredient;
 import com.sparc.BoozeChoose.R;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Whitney Champion
@@ -66,7 +68,10 @@ public class IngredientAdapter extends ArrayAdapter<Ingredient> {
 
             holder.name.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    BoozeChoose.myIngredients.add(ingredient);
+                    List<Ingredient> ingredients =  BoozeChoose.myIngredients;
+                    if(!ingredients.contains(ingredient)){
+                        BoozeChoose.myIngredients.add(ingredient);
+                    }
                     if (getContext().getClass().getName().equals("com.sparc.BoozeChoose.Activity.ListIngredients")) {
                         activity.finish();
                     }
