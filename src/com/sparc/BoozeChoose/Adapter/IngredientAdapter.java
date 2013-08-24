@@ -1,5 +1,6 @@
 package com.sparc.BoozeChoose.Adapter;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -25,12 +26,14 @@ public class IngredientAdapter extends ArrayAdapter<Ingredient> {
     Context context;
     int layoutResourceId;
     Ingredient data[] = null;
+    Activity activity;
 
-    public IngredientAdapter(Context context, int layoutResourceId, Ingredient[] data) {
+    public IngredientAdapter(Context context, Activity activity, int layoutResourceId, Ingredient[] data) {
         super(context, layoutResourceId, data);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
         this.data = data;
+        this.activity = activity;
     }
 
     @Override
@@ -64,7 +67,9 @@ public class IngredientAdapter extends ArrayAdapter<Ingredient> {
             holder.name.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     BoozeChoose.myIngredients.add(ingredient);
-                    BoozeChoose.adapter.notifyDataSetChanged();
+                    if (getContext().getClass().getName().equals("com.sparc.BoozeChoose.Activity.ListIngredients")) {
+                        activity.finish();
+                    }
                 }
             });
 

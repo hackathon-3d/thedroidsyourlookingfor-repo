@@ -46,7 +46,7 @@ public class ListIngredients extends BoozeChoose {
 
             ingredientData = ingredients.toArray(new Ingredient[ingredients.size()]);
 
-            adapter = new IngredientAdapter(this, R.layout.ingredient_list_item, ingredientData);
+            adapter = new IngredientAdapter(this, ListIngredients.this, R.layout.ingredient_list_item, ingredientData);
 
             this.ingredients = (ListView) findViewById(R.id.ingredientListView);
 

@@ -12,13 +12,14 @@ import com.sparc.BoozeChoose.Model.Ingredient;
 import com.sparc.BoozeChoose.R;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class BoozeChoose extends Activity {
 
     public static ListView ingredientsList;
-    public static IngredientAdapter adapter;
-    public static List<Ingredient> myIngredients;
+    private IngredientAdapter adapter;
+    public static List<Ingredient> myIngredients = new ArrayList<Ingredient>(0);
 
     public DatabaseAdapter myDbHelper;
     /**
@@ -49,7 +50,7 @@ public class BoozeChoose extends Activity {
                 Intent i = new Intent(BoozeChoose.this,ListIngredients.class);
                 i.putExtra("type","mixers");
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(i);
+                startActivityForResult(i,1);
             }
         });
 
@@ -61,7 +62,7 @@ public class BoozeChoose extends Activity {
                 Intent i = new Intent(BoozeChoose.this,ListIngredients.class);
                 i.putExtra("type","liquor");
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(i);
+                startActivityForResult(i,0);
             }
         });
 
@@ -73,7 +74,7 @@ public class BoozeChoose extends Activity {
                 Intent i = new Intent(BoozeChoose.this,ListIngredients.class);
                 i.putExtra("type","liqueur");
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(i);
+                startActivityForResult(i,0);
             }
         });
 
@@ -85,7 +86,7 @@ public class BoozeChoose extends Activity {
                 Intent i = new Intent(BoozeChoose.this,ListIngredients.class);
                 i.putExtra("type","misc");
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(i);
+                startActivityForResult(i,0);
             }
         });
 
@@ -97,12 +98,20 @@ public class BoozeChoose extends Activity {
 
             ingredientData = myIngredients.toArray(new Ingredient[myIngredients.size()]);
 
-            adapter = new IngredientAdapter(this, R.layout.ingredient_list_item, ingredientData);
+            adapter = new IngredientAdapter(this, BoozeChoose.this, R.layout.ingredient_list_item, ingredientData);
 
             ingredientsList = (ListView) findViewById(R.id.ingredientsList);
 
             ingredientsList.setAdapter(adapter);
 
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (adapter != null) {
+            adapter.notifyDataSetChanged();
         }
     }
 }
