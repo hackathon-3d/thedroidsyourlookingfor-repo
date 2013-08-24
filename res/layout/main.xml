@@ -4,10 +4,53 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
         >
-    <TextView
+
+    <Button
+            android:id="@+id/mixersButton"
+            android:text="@string/mixers"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Hello World, BoozeChoose"
-            />
+            android:style="@style/button"/>
+    <ListView
+            android:id="@+id/mixersList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            android:id="@+id/liquorButton"
+            android:text="@string/liquor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:style="@style/button"/>
+    <ListView
+            android:id="@+id/liquorList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+
+    <Button
+            android:id="@+id/liqueurButton"
+            android:text="@string/liqueur"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:style="@style/button"/>
+    <ListView
+            android:id="@+id/liqueurList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+
+    <Button
+            android:id="@+id/miscButton"
+            android:text="@string/misc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:style="@style/button"/>
+    <ListView
+            android:id="@+id/miscList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+
 </LinearLayout>
 

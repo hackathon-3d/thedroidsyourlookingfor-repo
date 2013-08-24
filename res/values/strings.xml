@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BoozeChoose</string>
+    <string name="mixers">Mixers</string>
+    <string name="liquor">Liquor</string>
+    <string name="liqueur">Liqueur</string>
+    <string name="misc">Miscellaneous</string>
 </resources>
