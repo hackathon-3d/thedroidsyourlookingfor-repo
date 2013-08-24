@@ -7,6 +7,11 @@
               android:layout_height="match_parent"
               android:background="@color/black">
 
+    <TextView android:id="@+id/recipeName"
+              style="@style/recipe_name"
+              android:layout_height="wrap_content"
+              android:layout_width="wrap_content"/>
+
     <TextView android:id="@+id/recipeText"
               style="@style/recipe_text"
               android:layout_height="wrap_content"
