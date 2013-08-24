@@ -11,7 +11,6 @@ import com.sparc.BoozeChoose.Adapter.DatabaseAdapter;
 import com.sparc.BoozeChoose.Adapter.IngredientAdapter;
 import com.sparc.BoozeChoose.Model.Ingredient;
 import com.sparc.BoozeChoose.R;
-import com.sparc.BoozeChoose.Twitter.TwitterClient;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,7 +32,6 @@ public class BoozeChoose extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         ingredientsList = (ListView) findViewById(R.id.ingredientsList);
-
 
         // set up db
 
