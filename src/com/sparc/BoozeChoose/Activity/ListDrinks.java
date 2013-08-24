@@ -26,20 +26,23 @@ public class ListDrinks extends BoozeChoose {
 
     public Drink[] drinkData;
     public DrinkAdapter adapter;
-    public ListView drinks;
+    public ListView drinkListView;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ingredient_list);
+        setContentView(R.layout.drink_list);
 
         Bundle extras = getIntent().getExtras();
-        List<Drink> drinks = null;
-        if (extras.getParcelableArrayList("drinks") != null) {
-           drinks = extras.getParcelableArrayList("drinks");
+        List<Drink> drinks = new ArrayList<Drink>(0);
+        if (extras!=null) {
+            for (int x=0; x<extras.size();x++) {
+               drinks.add(x,(Drink) extras.getParcelable("drinks_"+x));
+            }
         }
+
         // populate drinks
 
         if (!(drinks.size() < 1)) {
@@ -48,9 +51,9 @@ public class ListDrinks extends BoozeChoose {
 
             adapter = new DrinkAdapter(this, ListDrinks.this, R.layout.drink_list_item, drinkData);
 
-            this.drinks = (ListView) findViewById(R.id.drinkListView);
+            drinkListView = (ListView) findViewById(R.id.drinkListView);
 
-            this.drinks.setAdapter(adapter);
+            drinkListView.setAdapter(adapter);
         }
     }
 
