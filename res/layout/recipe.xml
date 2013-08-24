@@ -7,15 +7,38 @@
               android:layout_height="match_parent"
               android:background="@color/black">
 
-    <TextView android:id="@+id/recipeName"
-              style="@style/recipe_name"
-              android:layout_height="wrap_content"
-              android:layout_width="wrap_content"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:id="@+id/recipeBackground"
+                  android:orientation="vertical"
+                  android:gravity="center_horizontal"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="6dip"
+                  android:background="@color/white">
 
-    <TextView android:id="@+id/recipeText"
-              style="@style/recipe_text"
-              android:layout_height="wrap_content"
-              android:layout_width="wrap_content"/>
+        <TextView android:id="@+id/recipeName"
+                  style="@style/recipe_name"
+                  android:text="drink name"
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"/>
+
+        <ImageView
+                android:background="@drawable/drink_image"
+                android:contentDescription="drink_image"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                />
+
+        <TextView android:id="@+id/recipeText"
+                  style="@style/recipe_text"
+                  android:text="drink ingredients"
+                  android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"/>
+
+    </LinearLayout>
 
     <LinearLayout android:orientation="horizontal"
                   android:layout_marginBottom="5dip"
