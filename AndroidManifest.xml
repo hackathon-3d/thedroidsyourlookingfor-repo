@@ -27,5 +27,7 @@
         </activity>
         <activity android:name=".Activity.ListIngredients"
                   android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".Activity.ListDrinks"
+                  android:theme="@android:style/Theme.Dialog"/>
     </application>
 </manifest>
