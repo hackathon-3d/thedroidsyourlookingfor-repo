@@ -45,6 +45,16 @@ public class BoozeChoose extends Activity {
 
         // button listener for mixers
 
+        Button mixersText = (Button)findViewById(R.id.mixersText);
+        mixersText.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(BoozeChoose.this,ListIngredients.class);
+                i.putExtra("type","mixers");
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+            }
+        });
+
         Button addMixer = (Button)findViewById(R.id.mixersButton);
         addMixer.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -56,6 +66,16 @@ public class BoozeChoose extends Activity {
         });
 
         // button listener for liquor
+
+        Button liquorText = (Button)findViewById(R.id.liquorText);
+        liquorText.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(BoozeChoose.this,ListIngredients.class);
+                i.putExtra("type","liquor");
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+            }
+        });
 
         Button addLiquor = (Button)findViewById(R.id.liquorButton);
         addLiquor.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +89,16 @@ public class BoozeChoose extends Activity {
 
         // button listener for liqueur
 
+        Button liqueurText = (Button)findViewById(R.id.liqueurText);
+        liqueurText.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(BoozeChoose.this,ListIngredients.class);
+                i.putExtra("type","liqueur");
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+            }
+        });
+
         Button addLiqueur = (Button)findViewById(R.id.liqueurButton);
         addLiqueur.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -80,6 +110,16 @@ public class BoozeChoose extends Activity {
         });
 
         // button listener for misc
+
+        Button miscText = (Button)findViewById(R.id.miscText);
+        miscText.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(BoozeChoose.this,ListIngredients.class);
+                i.putExtra("type","misc");
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+            }
+        });
 
         Button addMisc = (Button)findViewById(R.id.miscButton);
         addMisc.setOnClickListener(new View.OnClickListener() {
